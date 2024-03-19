@@ -1,0 +1,54 @@
+{
+    "env": {
+      "es2021": true,
+      "node": true
+    },
+    "extends": [
+      "airbnb-base", // Usa a base do Airbnb que é focada em JavaScript
+      "plugin:@typescript-eslint/recommended", // Recomendações padrão para TypeScript
+      "prettier", // Integra com o Prettier para evitar conflitos de formatação
+      "plugin:prettier/recommended" // Habilita o plugin do Prettier e aplica suas regras como regras do ESLint
+    ],
+    "parser": "@typescript-eslint/parser", // Usa o parser do TypeScript
+    "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module",
+      "project": "./tsconfig.json" // Aponta para o seu arquivo tsconfig.json
+    },
+    "plugins": [
+      "@typescript-eslint", // Utiliza os plugins do TypeScript
+      "import" // Melhora a detecção e o gerenciamento das declarações de import/export
+    ],
+    "rules": {
+      "indent": ["error", 4], // Define a indentação para 4 espaços
+      "linebreak-style": ["error", "unix"], // Exige quebras de linha estilo Unix
+      "quotes": ["error", "single"], // Exige aspas simples
+      "semi": ["error", "always"], // Exige ponto e vírgula no final das declarações
+      "@typescript-eslint/no-unused-vars": ["warn"], // Adverte sobre variáveis não utilizadas
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "js": "never",
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
+      ], // Configurações para não exigir extensões de arquivo específicas ao importar
+      "no-use-before-define": "off", // Desativa a regra no-use-before-define
+      "@typescript-eslint/no-use-before-define": ["error"], // Usa a versão do TypeScript desta regra
+      "no-plusplus": "off",
+      "no-loop-func": "off",
+      "@typescript-eslint/no-plusplus": "off",
+      "@typescript-eslint/no-loop-func": "off",
+      "no-promise-executor-return": "off",
+      "no-await-in-loop": "off",
+      "no-shadow": "off"
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {} // Permite que o eslint-plugin-import resolva corretamente os caminhos para arquivos TypeScript
+      }
+    }
+  }
+  

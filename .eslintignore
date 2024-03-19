@@ -1,0 +1,4 @@
+dist/
+coverage/
+commitlint.config.js
+jest.config.js
